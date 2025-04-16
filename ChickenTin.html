@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicken Tinola</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;           
+            padding-top: 0px; 
+        }
+
+        .navbar {
+            position: fixed; 
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 50px;
+            padding-top: 50px;
+            padding-bottom: 0px;   
+            align-items: center;
+            font-weight: bold;
+            background: url(Images/Bggg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            backdrop-filter: blur(1px);
+
+        }
+
+        .navbar h1 {
+            color: white;
+            margin: 0;
+            font-size: 40px;
+        }
+
+        .navbar ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-right: 150px;
+            list-style: none;
+            gap: 40px;
+            text-transform: uppercase;
+            font-size: 20px;
+            
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            transition: color 0.3s;
+            cursor: pointer; 
+        }
+
+        .navbar li:hover {
+          background-color: #332f70;
+          padding: 1px ;
+          border-radius: 30px;
+        }
+            
+    button {
+        display: flex;
+        height: 3em;
+        width: 100px;
+        align-items: center;
+        justify-content: center;
+        background-color: #eeeeee4b;
+        border-radius: 3px;
+        letter-spacing: 1px;
+        transition: all 0.2s linear;
+        cursor: pointer;
+        border: none;
+        background: #fff;
+        font-size: 25px;
+        padding-top: 150px;
+        padding-bottom: 0;
+    }
+
+    button a{
+        font-size: 25px;
+         border: 2px solid; 
+         border-color: black; 
+         margin-left: 50px; 
+         margin-top: 10px; 
+         color: rgb(3, 3, 3); 
+         padding: 5px 20px 5px 20px; 
+         border-radius: 25px;
+         text-decoration: none;
+         transition: background-color 0.6s, color 0.6s;
+    }  
+
+    button a:hover {
+        background-color: #362F70;
+        color: white;
+    } 
+        
+    .container {
+        display: flex;
+        gap: 15px;
+        background: rgb(199, 199, 201);
+        padding: 40px;
+        margin: 0 320px 0 320px;
+        border-radius: 25px;      
+        justify-content: center;   
+    }
+    h1{
+        margin-left: 200px;
+        margin-right: 200px;
+        font-size: 35px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    p {
+        margin-left: 200px;
+        margin-right: 200px;
+        margin-top: 0px;
+        font-size: 24px;
+        text-align: justify;
+        text-justify: inter-word;
+    }
+
+    .content{
+        padding-top: 60px;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    img {
+        width: 180px;
+        height: 270px; 
+        object-fit: cover;   
+    }
+
+    .ing{
+        margin-top: 0;
+        margin-left: 200px;
+        font-size: 24px;
+        list-style: outside; 
+    }
+
+    .ing p {
+        margin-left: 5px;
+        font-size: 24px;
+    }
+
+    .instruction {
+        margin-left: 200px;
+        margin-right: 200px;
+        font-size: 24px;
+        padding-top: 0;
+        text-align: justify;
+        text-justify: inter-word;
+    }
+
+    .instruction p {
+        margin-left: 0px;
+        font-size: 24px;
+        list-style: bullet;
+        padding-left: 0;
+        text-align: justify;
+        text-justify: inter-word;
+    }
+
+    .toTop {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        padding-top: 0;
+       
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #333;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 14px;
+    
+    }
+
+    .toTop a{
+        font-size: 25px;
+         border: 2px solid; 
+         border-color: black; 
+         margin-left: 50px; 
+         margin-top: 10px; 
+         color: rgb(3, 3, 3); 
+         padding: 5px 20px 5px 20px; 
+         border-radius: 25px;
+         text-decoration: none;
+         transition: background-color 0.6s, color 0.6s;
+    }
+
+    .toTop a:hover {
+        background-color: #362F70;
+        color: white;
+    }
+
+    .back-to-top:hover {
+      background: #555;
+    }
+
+    .footer {
+        color: black;
+        background: #362F70;
+        text-align: center;
+        padding: 10px 0px;
+        position: relative;
+        top: 50px; 
+        bottom: 0px; 
+        width: 100%;
+    }
+</style>            
+</head>
+<body>
+    <div class="navbar">
+        <h1>Dish Delights</h1>
+        <ul>
+            <li>
+                <a href="Homepage.html#home">Home</a>
+            </li>
+            <li>
+                <a href="Recipes.html">Recipes</a>
+            </li>
+            <li>
+                <a href="Homepage.html#about">About Us</a>
+            </li>
+            <li>
+                <a href="Homepage.html#contactcont">Contact Us</a>
+            </li>
+            <li>
+                <a href="Homepage.html#support">Support Us</a>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <button>
+           <a href="Recipes.html#maincourse" id="top">Back</a>
+          </button>
+    </div>
+    <div class="content">
+        <div class="container">         
+            <img src="Images/ChickTin 1.jpg">          
+            <img src="Images/ChickTin 2.jpg">        
+            <img src="Images/ChickTin 3.jpg">            
+    </div>
+
+    <div>
+            <h1><br>Chicken Tinola</h1><br>
+        <p><b>Chicken Tinola</b>, is a classic Filipino comfort soup, perfect for a chilly day or when you're feeling under the weather. Its a popular Filipino soup, known for its comforting, flavorful broth made with chicken, ginger, garlic, and fish sauce, often including vegetables like papaya and malunggay leaves.
+        </p><br><br>
+        </div>
+    <div class="ing">
+        <h4>Ingredients:</h4>
+        <ul>
+            
+            <li>3 lbs bone-in chicken, cut into serving pieces (Note:  Boneless chicken can be substituted, but bone-in is traditional for richer flavor. You can remove the skin for a lower-fat option.)</li><br>
+            <li>1 large onion, chopped</li><br>
+            <li>3 thumbs ginger, julienned (about 3 inches)</li><br>
+            <li>2 green papayas, wedged (or 2 chayotes, cut into wedges – chayote is a good substitute if papaya is unavailable) </li>
+            <li>1 ½ cups malunggay leaves (Moringa leaves –  substitute with spinach or other leafy greens if unavailable)</li><br>
+            <li>1 cup hot pepper leaves (Siling labuyo leaves – optional, adds a mild heat)</li><br>
+            <li>2 tablespoons fish sauce (Patis – adjust to taste)</li><br>
+            <li>2 Maggi Magic Chicken Cubes (optional, for extra chicken flavor)</li><br>
+            <li>1 quart rice wash (water used to rinse uncooked rice)</li><br>
+            <li>1 quart water (or more, as needed to adjust consistency)</li><br>
+            <li>Salt and pepper to taste</li><br>
+            <li>3 tablespoons cooking oil</li><br>
+            
+            
+        </ul>
+    </div>
+    <div class="instruction">
+        <h4>Instructions:</h4>
+        <ol>
+            <li>
+             Prepare Ingredients:Wash and prepare all ingredients as listed above. <br>
+            </li>
+            <li>
+               Sauté Aromatics: Heat cooking oil in a pot over medium heat. Sauté garlic, onion, and ginger until softened and fragrant. <br>
+               <br><br>
+            </li>
+            <li>
+              Brown Chicken:  Add chicken pieces to the pot and cook for 2-3 minutes per side, until lightly browned.<br>
+                <br><br>
+            </li>   
+            <li> 
+               Add Seasoning and Rice Wash:  Pour in fish sauce and stir well. Add rice wash and bring to a boil.<br>
+                <br><br>
+            </li> 
+            <li>
+               Simmer: Reduce heat to low, cover, and simmer for 30-45 minutes, or until chicken is tender. Add water as needed to maintain desired consistency.<br>
+                <br><br>
+           </li>
+            <li>
+               Add Vegetables: Add papaya (or chayote) wedges and continue to simmer for 15-20 minutes, or until tender.<br>
+                <br><br>
+           </li>
+           <li>
+               Add Greens & Season:Stir in Maggi cubes (if using). Add hot pepper leaves and malunggay leaves. Cover and let sit for 2 minutes to wilt the greens. Season with salt and pepper to taste.<br>
+                <br><br>
+           </li>
+            <li>
+              Serve:Ladle into bowls and serve hot with steamed rice.  A small bowl of fish sauce and chili peppers on the side is a traditional accompaniment.<br>
+                <br><br>
+           </li>
+          
+        
+    </div>
+    <h3 class="toTop">
+        <a href="#top">Back  to the Top</a>
+    </h3>
+    <footer id="footer" class="footer">
+        <div class="container">
+          <div class="copyright">
+            &copy; Copyright <strong><span>Dish Delights</span></strong>. All Rights Reserved
+          </div>
+        </div>
+      </footer> 
+</body>
+</html>

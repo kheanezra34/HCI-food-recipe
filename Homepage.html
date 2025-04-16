@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('Images/Bggg.jpg'); 
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;   
+            background-attachment: fixed;
+            height: 100%;           
+            padding-top: 0px; 
+            scroll-behavior: smooth;
+        }
+
+        .navbar {
+            position: fixed; 
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 50px;
+            padding-top: 50px;
+            padding-bottom: 0px;   
+            align-items: center;
+            font-weight: bold;
+            background: url(Images/Bggg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            backdrop-filter: blur(1px);
+
+        }
+
+        .navbar h1 {
+            color: white;
+            margin: 0;
+            font-size: 40px;
+        }
+
+        .navbar ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-right: 150px;
+            list-style: none;
+            gap: 40px;
+            text-transform: uppercase;
+            font-size: 20px;
+            
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            transition: color 0.3s;
+            cursor: pointer; 
+        }
+
+        .navbar li:hover {
+          background-color: #332f70;
+          padding: 1px ;
+          border-radius: 30px;
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh; 
+            padding: 0 50px; 
+            color: white;
+            gap: 50px;
+            padding-left: 100px;
+            padding-right: 100px;
+            padding-top: 15px;
+            padding-bottom: 0px;
+        }
+
+        .text-section h1 {
+            max-width: 600px;
+            font-size: 64px;
+            margin-left: 0px;
+            margin-bottom: 0;
+        }
+
+        .text-section p {
+            margin-top: 5px;
+            font-size: 18px;
+            margin-right: 20px;
+            margin-top: 5px;
+            
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+
+        }
+
+        .container p {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .justified {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .contactcont {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            padding-top: 0px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contactcont p{
+            color: #ffffff;
+        }
+
+        h1 {
+            color: #ffffff;
+        }
+
+        .contact-info {
+            margin: 20px 0;
+        }
+
+        .info {
+            background-color: rgba(10, 10, 10, 0.575);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .info p {
+            margin: 0;
+            color: #f8f8f8;
+        }
+
+        .form-container {
+            margin-top: 0px;
+            padding: 20px;
+            padding-top: 0px;
+
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 16px;
+        }
+
+        form h4 {
+            margin: 0;
+            color: #ffffff;
+        }
+
+        input, textarea {
+            padding: px;
+            margin: 2px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        textarea {
+            resize: horizontal;
+            min-height: 60px;
+        }
+
+        button {
+             padding: 10px;
+            margin-top: 10px;
+            background-color: #332f70;
+            color: rgb(255, 255, 255);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #4b448d;
+            transition: background-color 0.6s, color 0.6s;
+        }
+
+        .support {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            color: #ffffff;
+        }
+
+        p {
+            color: #ffffff;
+        }
+
+        .donation-buttons {
+            margin-top: 20px;
+        }
+
+        .donate-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: background-color 0.6s, color 0.6s;
+        }
+
+        .paypal {
+            background-color: #362F70;
+        }
+        .gcash {
+            background-color: #362F70;
+        }
+
+        .donate-button:hover {
+            opacity: 0.8;
+        }
+        .developer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 30px 20px 30px;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding-top: 50px;
+            padding-bottom: 150px;
+        }
+
+        .developer h2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 30px;
+            margin-bottom: 0px;
+            width: 100%;
+  }
+
+
+.card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    width: 190px;
+    padding: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  .card img {
+    width: 190px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    padding-bottom: 0px;
+  }
+
+  .card h4 {
+      color: black;
+    padding-top: 0px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-size: 16px;
+  }
+
+  .card p {
+    color: black;
+    font-size: 12px;
+    margin-bottom: 10px;
+    flex-grow: 1;
+  }
+
+  .footer {
+      color: white;
+      text-align: center;
+      padding: 10px 0px;
+      position: relative;
+      top: 50px; 
+      bottom: 0px; 
+      width: 100%;
+  }
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="Homepage.html#about"><h1>Dish Delights</h1></a>
+        <ul>
+            <li>
+                <a href="#home">Home</a>
+            </li>
+            <li>
+                <a href="Recipes.html">Recipes</a>
+            </li>
+            <li>
+                <a href="Homepage.html#about">About Us</a>
+            </li>
+            <li>
+                <a href="Homepage.html#contactcont">Contact Us</a>
+            </li>
+            <li>
+                <a href="Homepage.html#support">Support Us</a>
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <section class="home" id="home">
+            <div class="content" id="home">
+                <div class="text-section">
+                    <h1>Enjoy Our <br>
+                        Delicious Meals </h1>
+                    <p class="justified">We’ve organized these recipes every way we could think of so you
+                     don't have to! Dietary restrictions, weeknight dinners, meal prep 
+                      recipes, some of our most tried-and-true… no matter how you browse, 
+                      we’re sure you’ll find just what you were looking for.
+                    </p>
+                </div>
+                <div class="image-section">
+                    <a href="Adobo.html"><img src="Images/Chicken-Bg-removebg-preview.png" alt="Dish Delights" style="width: 500px; height: auto;"></a>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div>
+        <section class="about" id="about">
+            <div class="content">
+                <div class="container">
+                    <h1>
+                        About Us
+                    </h1>
+                    <p>Welcome to Dish Delights, your ultimate destination for delicious and easy-to-follow recipes!</p>
+                    <p>We're a group of passionate food lovers and home cooks on a misson to share the rich and colorful flavors of the Philippines with the world.
+                        Our website is a collection of beloved Filipino recipes -passed down through  generations and enjoyed at every family gathering.
+                        Whether your craving for savory adobo, sweet leche flan, or crispy lumpia, we've got you covered with step-by-step instructions and helpful tips to make cooking a breeze.</p>
+                    <p>We believe that food is more than just nourishment-it's a connection to our roots, a way to preserve culture, and a celebration of identity.
+                        Through easy-to follow recipes, cooking tips, and stories behind each diishes, we aim to make Filipino cuisine accesible to everyone, everywhere.
+                        Join us as we honor traditions, inspire creativity in the kitchen, and bring the warmth of Filipino cooking to tables around the globe.</p>
+                    <p>Thank you for visiting Dish Delights! We hope you find joy in cooking and discover new flavors that excite your palate.
+                        Don't forget to check out our latest recipes and share your culinary creations with us on social media.
+                        Happy cooking!</p>
+                </div>                             
+            </div>
+            <div class="content">
+                <div class="developer">
+                    <h2>Developers</h2>
+                    <div class="card">
+                        <img src="Images/Me Pic.jpg" alt="Zy Image">
+                        <div>
+                          <h4>Zyrille Francis Liguan</h4>
+                          <p>Main Dev/Leader</p>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <img src="Images/JB.jpg" alt="jb Image">
+                        <div>
+                          <h4>Jesse Lou Buhay</h4>
+                          <p> Web Dev</p>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <img src="Images/DA.jpg" alt="da Image">
+                        <div>
+                          <h4>Darren Hayes Aguirre</h4>
+                          <p>Web Designer</p>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <img src="Images/LA.jpg" alt="la Image">
+                        <div>
+                          <h4>Luke Grabriel Alay</h4>
+                          <p>Web Developer</p>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <img src="Images/MM.jpg" alt="mm Image">
+                        <div>
+                          <h4>Marjorie Mariquit</h4>
+                          <p>Researcher</p>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <img src="Images/KP.jpg" alt="kp Image">
+                        <div>
+                          <h4>Khean Ezra Pacarat</h4>
+                          <p>Researcher</p>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <img src="Images/ET.jpg" alt="et Image">
+                        <div>
+                          <h4>Edwin Turno</h4>
+                          <p>Researcher</p>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </section>
+        <section  id="contactcont">
+            <div class="content">
+            <div class="contactcont">
+                <h1>Contact Us</h1>
+                <p>Thanks for visiting our online kitchen! If you have questions <br>
+                    about our recipes, want to collaborate, or just want to reach <br>
+                     out, feel free to contact us:</p>
+                <div class="contact-info">
+                    <div class="info">
+                        <p><strong>Email:</strong> DishDelights@gmail.com</p>
+                    </div>
+                    <div class="info">
+                        <p><strong>Call:</strong> 0912 345 6789</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contactcont">
+                <div class="form-container">
+                    <h2>Get in Touch</h2>
+                    <form>
+                        <h4>Your Name</h4>
+                        <input type="text" placeholder="Your Name" required>
+                        <h4>Email</h4>
+                        <input type="email" placeholder="Your Email" required>
+                        <h4>Subject</h4>
+                        <input type="text" placeholder="Subject" required>
+                        <h4>Message</h4>
+                        <textarea placeholder="Message" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+<br><br><br>
+</section>
+            <section id="support">
+            <div class="content">
+            <div class="support" >
+                <h2>Support Us</h2>
+                <p>Your support helps us keep the website running. If you enjoy our content, please consider making a donation.</p>
+                <div class="donation-buttons">
+                    <a href="https://www.paypal.com/donate?hosted_button_id=YOUR_PAYPAL_BUTTON_ID" class="donate-button paypal">Donate with PayPal</a>
+                    <a href="https://gcash.com" class="donate-button gcash">Donate with GCash</a>
+                </div>
+            </div>
+<br><br><br><br>
+            </div>
+        </div>
+            </section>                 
+            
+            <footer id="footer" class="footer">
+            <div class="container">
+            <div class="copyright">
+            &copy; Copyright <strong><span>Dish Delights</span></strong>. All Rights Reserved
+            </div>
+            </div>
+            </footer> 
+</section>
+</body>
+</html>
+

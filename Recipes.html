@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recipes</title>
+  <style>
+     body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;           
+            padding-top: 0px; 
+        }
+
+        .navbar {
+            position: fixed; 
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 50px;
+            padding-top: 50px;
+            padding-bottom: 15px; 
+            padding-left: 45px;  
+            align-items: center;
+            font-weight: bold;
+            background: url(Images/Bggg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            backdrop-filter: blur(1px);
+
+        }
+
+        .navbar h1 {
+            color: white;
+            margin: 0;
+            font-size: 40px;
+        }
+
+        .navbar ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-right: 150px;
+            padding-left: 10px;
+            padding-top: 0px;
+            list-style: none;
+            gap: 40px;
+            text-transform: uppercase;
+            font-size: 20px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 8px;
+            padding-top: 0px;
+            padding-right: 10px;
+            font-size: 20px;
+            transition: color 0.3s;
+            cursor: pointer; 
+        }
+
+        .navbar li:hover {
+          background-color: #332f70;
+          padding: 1px ;
+          border-radius: 30px;
+        }
+
+        .upperhead {          
+            padding-top: 2px;
+            padding-bottom: 0;
+            margin-bottom: 0;
+            text-align: center;       
+        }
+
+        .upperhead h2 {
+            margin: 0px;
+            margin-top: 10px;
+            padding-top: 0px;
+        }
+
+        .upperhead p {
+            margin: 0px;
+            padding-top: 10px;
+            padding-bottom: 10px;        
+        }
+
+        
+        .container-top{
+            position: fixed;
+            left: 50px;
+            right: 50px;
+            top: 150px;
+            background-color: #D9D9D9;
+            padding-top: 0px;
+            padding-bottom: 1px;
+            margin-right: 200px;
+            margin-left: 200px;              
+            border-radius: 10px; 
+        }
+
+        .categories {
+            position: fixed;
+            left: 50px;
+            right: 50px;
+            top: 250px;
+            display: flex;
+            justify-content: center;    
+            align-items: center;         
+            color: white;            
+        }
+
+        .fixedbg {
+            position: fixed;
+            top: 128px;
+            left: 0;
+            right: 0;
+            bottom: 310px;
+            background-color: white;
+            
+        }
+
+        .categories ul{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+        }
+
+        .categories li {
+            margin: 0 10px;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .categories a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 35px;
+            transition: color 0.3s, ba3s;
+            background-color: #362F70;
+            border-radius: 25px;
+            font-size: 15px;
+            cursor: pointer; 
+            position: relative;
+        }
+
+        .categories ul a::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 5px;
+            background-color: #362F70;
+            transition: width 0.2s ease;
+        }
+
+        .categories ul a:hover::after {
+            width: 100%; 
+        }
+
+        .categories a:hover {
+            color: black;
+            background-color: white; 
+            opacity: 1s;
+        }
+
+    .recipes {
+      display: flex;
+      justify-content: center;
+      gap: 120px;
+      padding: 350px 60px 20px;
+      flex-wrap: wrap;
+    }
+
+    .recipes p {
+      text-align: justify;
+      text-justify: inter-word;
+    }
+
+    
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      width: 190px;
+      padding: 10px;
+      padding-bottom: 10px;
+      padding-right: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 30px;
+    }
+
+    .card img {
+      width: 190px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      padding-bottom: 0px;
+    }
+
+    .card h4 {
+      padding-top: 0px;
+      margin-top: 0px;
+      margin-bottom: 5px;
+      font-size: 16px;
+    }
+
+    .card p {
+      font-size: 12px;
+      margin-bottom: 10px;
+      flex-grow: 1;
+    }
+
+    .card button {
+      background-color: white;
+      color: black;
+      border: 1px solid #362F70;
+      padding: 10px 50px 10px 60px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+
+    .card button:hover {
+      background-color: #362F70;
+      color: white;
+      transition: background-color 0.3s, color 0.3s, border 0.3s
+    }
+    
+    a {
+        text-decoration: none;
+        color: black;
+        font-size: 19px;
+    }
+
+    .recipes h2 {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 35px;
+      color: #362F70;
+      width: 100%;
+    }
+
+    .recipes > .category-group {
+      display: none;
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    #appetizer:target ~ .recipes #group-showall,
+    #maincourse:target ~ .recipes #group-showall,
+    #dessert:target ~ .recipes #group-showall {
+    display: none;
+    }
+
+    #appetizer:target ~ .recipes #group-appetizer,
+    #maincourse:target ~ .recipes #group-maincourse,
+    #dessert:target ~ .recipes #group-dessert {
+      display: flex;
+      
+    }
+    
+    #group-showall {
+      display: flex;
+    }
+
+    .footer {
+      color: black;
+      background: #362F70;
+        text-align: center;
+        padding: 10px 0px;
+        position: relative;
+        top: 50px; 
+        bottom: 0px; 
+        width: 100%;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <a href="Homepage.html#about"><h1>Dish Delights</h1></a>
+    <ul>
+      <li>
+          <a href="Homepage.html#home">Home</a>
+      </li>
+      <li>
+          <a href="Recipes.html">Recipes</a>
+      </li>
+      <li>
+          <a href="Homepage.html#about">About Us</a>
+      </li>
+      <li>
+          <a href="Homepage.html#contactcont">Contact Us</a>
+      </li>
+      <li>
+          <a href="Homepage.html#support">Support Us</a>
+      </li>
+  </ul>
+  </div>
+
+  <div class="fixedbg">
+    <div class="container-top">
+        <div class="upperhead">
+            <h2>
+                Top Rated Recipes
+            </h2>
+            <p>Out of all many recipes on dish delights, these are our shining stars- <br>
+            the recipes we come back to again and again (and again).
+            </p>
+        </div>       
+    </div> 
+    <div class="categories">
+      <ul>
+        <li><a href="#showall">Show All</a></li>
+        <li><a href="#appetizer">Appetizer</a></li>
+        <li><a href="#maincourse">Main Course</a></li>
+        <li><a href="#dessert">Dessert</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="showall"></div>
+  <div id="appetizer"></div>
+  <div id="maincourse"></div>
+  <div id="dessert"></div>
+
+  <div class="recipes">
+    <!-- Appetizer -->
+    <div class="category-group" id="group-appetizer">
+      <h2>Appetizer</h2>
+      <div class="card">
+        <a href="dynaLum.html"><img src="Images/Dynamite bg.jpg" alt="Dish Image"></a>
+        <div>
+          <a href="dynaLum.html"><h4>Dynamite Lumpia</h4></a>
+          <a href="dynaLum.html"><p><b>Dynamite Lumpia</b>, also known as Lumpiang 
+            Dinamita, is a fiery Filipino appetizer that...</p></a>
+          <a href="dynaLum.html"><button>View recipe →</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <a href="LumShang.html"><img src="Images/Lumpia bg.jpg" alt="Dish Image"></a>
+        <div>
+          <a href="LumShang.html"><h4>Lumpiang Shanghai</h4></a>
+          <a href="LumShang.html"><p>Lumpiang Shanghai, also known as Filipino spring rolls, are a beloved appetizer...</p></a>
+          <a href="LumShang.html"><button>View recipe →</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <a href="beefEmpa.html"><img src="Images/Beef bg.jpg" alt="Dish Image"></a>
+        <div>
+          <a href="beefEmpa.html"><h4>Beef Empanada</h4></a>
+          <a href="beefEmpa.html"><p><b>Beef Empanadas</b> are savory pastries filled with a flavorful mixture...</p></a>
+          <a href="beefEmpa.html"><button>View recipe →</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <a href="Siomai.html"><img src="Images/Siomai bg.jpg" alt="Dish Image"></a>
+        <div>
+          <a href="Siomai.html"><h4>Siomai</h4></a>
+          <a href="Siomai.html"><p>Siomai are steamed Chinese dumplings, typically filled with ground pork, shrimp,...</p></a>
+          <a href="Siomai.html"><button>View recipe →</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <a href="Bulaklak.html"><img src="Images/Bulaklak bg.jpg" alt="Dish Image"></a>
+        <div>
+          <a href="Bulaklak.html"><h4>Chicharon  Bulaklak</h4></a>
+          <a href="Bulaklak.html"><p>Chicharon Bulaklak, meaning "flower chicharon," is a popular Filipino appetizer known...</p></a>
+          <a href="Bulaklak.html"><button>View recipe →</button></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Courses -->
+    <div class="category-group" id="group-maincourse">
+      <h2>Main Course</h2>   
+      <div class="card">
+        <a href="ChickenTin.html"><img src="Images/Tinola bg.jpg" alt="Dish Image"></a>
+        <div>
+          <a href="ChickenTin.html"><h4>Chicken Tinola</h4></a>
+          <a href="ChickenTin.html"><p>Chicken Tinola is a classic Filipino comfort soup, perfect for a chilly day or when you're...</p></a>
+          <a href="ChickenTin.html"><button>View recipe →</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <a href="Sisig.html"><img src="Images/Sisig bg.jpg" alt="Dish Image"></a>
+        <div>
+          <a href="Sisig.html"><h4>Sisig</h4></a>
+          <a href="Sisig.html"><p>Sisig, a popular Filipino dish, is a sizzling plate of chopped pork, typically including pig's face...</p></a>
+          <a href="Sisig.html"><button>View recipe →</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <a href="Adobo.html"><img src="Images/Adobo bg.jpg" alt="Dish Image"></a>
+        <div>
+          <a href="Adobo.html"><h4>Chicken Adobo</h4></a>
+          <a href="Adobo.html"><p>Chicken Adobo is a beloved Filipino dish known for its savory, tangy, and slightly sweet flavors...</p></a>
+          <a href="Adobo.html"><button>View recipe →</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <a href="Pinakbit.html"><img src="Images/Pakbit bg.jpg" alt="Dish Image"></a>
+        <div>
+          <a href="Pinakbit.html"><h4>Pinakbit</h4></a>
+          <a href="Pinakbit.html"><p>Pinakbet is a vibrant and flavorful Filipino vegetable stew, known for its diverse mix of vegetables...</p></a>
+          <a href="Pinakbit.html"><button>View recipe →</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <a href="Arozzcaldo.html"><img src="Images/Arozcaldo bg.jpg" alt="Dish Image"></a>
+        <div>
+          <a href="Arozzcaldo.html"><h4>Chicken Arroz Caldo</h4></a>
+          <a href="Arozzcaldo.html"><p>Chicken Arroz Caldo is a comforting Filipino rice porridge, perfect for chilly days.</p></a>
+          <a href="Arozzcaldo.html"><button>View recipe →</button></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Desserts -->
+    <div class="category-group" id="group-dessert">
+      <h2>Dessert</h2>
+      <div class="card">
+        <a href="HaloHalo.html"><img src="Images/Halo-halo bg.jpg" alt="Dish Image"></a>
+        <div>
+          <a href="HaloHalo.html"><h4>Halo-Halo</h4></a>
+          <a href="HaloHalo.html"><p>Halo-Halo (meaning "mix-mix") is a quintessential Filipino dessert, especially popular during summer...</p></a>
+          <a href="HaloHalo.html"><button>View recipe →</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <a href="LecheFlan.html"><img src="Images/Leche flan bg.jpg" alt="Dish Image"></a>
+        <div>
+          <a href="LecheFlan.html"><h4>Leche Flan</h4></a>
+          <a href="LecheFlan.html"><p>Leche Flan is a Filipino version of crème caramel, a smooth and silky custard with a thick...</p></a>
+          <a href="LecheFlan.html"><button>View recipe →</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <a href="Halaya.html"><img src="Images/Ube bg.jpg" alt="Dish Image"></a>
+        <div>
+          <a href="Halaya.html"><h4>Ube Halaya</h4></a>
+          <a href="Halaya.html"><p>Ube Halaya is a sweet, creamy jam made from purple yam, milk, and sugar. It's a versatile dessert...</p></a>
+          <a href="Halaya.html"><button>View recipe →</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <a href="MangoFloat.html"><img src="Images/Mango float bg.jpg" alt="Dish Image"></a>
+        <div>
+          <a href="MangoFloat.html"><h4>Mango Float</h4></a>
+          <a href="MangoFloat.html"><p>The Mango Float is a beloved no-bake Filipino dessert, a delightful layered treat of creamy...</p></a>
+          <a href="MangoFloat.html"><button>View recipe →</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <a href="Pandan.html"><img src="Images/Pandan bg.jpg" alt="Dish Image"></a>
+        <div>
+          <a href="Pandan.html"><h4>Buko Pandan</h4></a>
+          <a href="Pandan.html"><p>Buko Pandan is a beloved Filipino dessert, a delightful combination of creamy coconut milk...</p></a>
+          <a href="Pandan.html"><button>View recipe →</button></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Show All (mix of all) -->
+    <div class="category-group" id="group-showall">    
+      <h2>All Recipes</h2>
+      <div class="card">
+        <a href="LumShang.html"><img src="Images/Lumpia bg.jpg" alt="Dish Image"></a>
+        <div>
+          <a href="LumShang.html"><h4>Lumpiang Shanghai</h4></a>
+          <a href="LumShang.html"><p><b>Lumpiang Shanghai</b>, also known as Filipino spring rolls, are a beloved appetizer...</p></a>
+          <a href="LumShang.html"><button>View recipe →</button></a>
+        </div>
+      </div>      
+      <div class="card">
+        <a href="Siomai.html"><img src="Images/Siomai bg.jpg" alt="Dish Image"></a>
+        <div>
+          <a href="Siomai.html"><h4>Siomai</h4></a>
+          <a href="Siomai.html"><p><b>Siomai</b> are steamed Chinese dumplings, typically filled with ground pork, shrimp,...</p></a>
+          <a href="Siomai.html"><button>View recipe →</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <a href="HaloHalo.html"><img src="Images/Halo-halo bg.jpg" alt="Dish Image"></a>
+        <div>
+          <a href="HaloHalo.html"><h4>Halo-Halo</h4></a>
+          <a href="HaloHalo.html"><p><b>Halo-Halo</b> (meaning "mix-mix") is a quintessential Filipino dessert, especially popular...</p></a>
+          <a href="HaloHalo.html"><button>View recipe →</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <a href="Bulaklak.html"><img src="Images/Bulaklak bg.jpg" alt="Dish Image"></a>
+        <div>
+          <a href="Bulaklak.html"><h4>Chicharon  Bulaklak</h4></a>
+          <a href="Bulaklak.html"><p><b>Chicharon Bulaklak</b>, meaning "flower chicharon," is a popular Filipino appetizer known...</p></a>
+          <a href="Bulaklak.html"><button>View recipe →</button></a>
+        </div>
+      </div>    
+      <div class="card">
+        <a href="Sisig.html"><img src="Images/Sisig bg.jpg" alt="Dish Image"></a>
+        <div>
+          <a href="Sisig.html"><h4>Sisig</h4></a>
+          <a href="Sisig.html"><p><b>Sisig</b>, a popular Filipino dish, is a sizzling plate of chopped pork, typically including pig's face...</p></a>
+          <a href="Sisig.html"><button>View recipe →</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <a href="dynaLum.html"><img src="Images/Dynamite bg.jpg" alt="Dish Image"></a>
+        <div>
+          <a href="dynaLum.html"><h4>Dynamite Lumpia</h4></a>
+          <a href="dynaLum.html"><p><b>Dynamite Lumpia</b>, also known as Lumpiang 
+            Dinamita, is a fiery Filipino appetizer that...</p></a>
+          <a href="dynaLum.html"><button>View recipe →</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <a href="Adobo.html"><img src="Images/Adobo bg.jpg" alt="Dish Image"></a>
+        <div>
+          <a href="Adobo.html"><h4>Chicken Adobo</h4></a>
+          <a href="Adobo.html"><p><b>Chicken Adobo</b>is a beloved Filipino dish known for its savory, tangy, and slightly sweet flavors...</p></a>
+          <a href="Adobo.html"><button>View recipe →</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <a href="LecheFlan.html"><img src="Images/Leche flan bg.jpg" alt="Dish Image"></a>
+        <div>
+          <a href="LecheFlan.html"><h4>Leche Flan</h4></a>
+          <a href="LecheFlan.html"><p><b>Leche Flan</b> is a Filipino version of crème caramel, a smooth and silky custard with a thick caramel...</p></a>
+          <a href="LecheFlan.html"><button>View recipe →</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <a href="Pinakbit.html"><img src="Images/Pakbit bg.jpg" alt="Dish Image"></a>
+        <div>
+          <a href="Pinakbit.html"><h4>Pinakbit</h4></a>
+          <a href="Pinakbit.html"><p><b>Pinakbet</b> is a vibrant and flavorful Filipino vegetable stew, known for its diverse mix of vegetables...</p></a>
+          <a href="Pinakbit.html"><button>View recipe →</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <a href="MangoFloat.html"><img src="Images/Mango float bg.jpg" alt="Dish Image"></a>
+        <div>
+          <a href="MangoFloat.html"><h4>Mango Float</h4></a>
+          <a href="MangoFloat.html"><p><b>The Mango Float</b> is a beloved no-bake Filipino dessert, a delightful layered treat of creamy...</p></a>
+          <a href="MangoFloat.html"><button>View recipe →</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <a href="Arozzcaldo.html"><img src="Images/Arozcaldo bg.jpg" alt="Dish Image"></a>
+        <div>
+          <a href="Arozzcaldo.html"><h4>Chicken Arroz Caldo</h4></a>
+          <a href="Arozzcaldo.html"><p><b>Chicken Arroz Caldo</b> is a comforting Filipino rice porridge, perfect for chilly days...</p></a>
+          <a href="Arozzcaldo.html"><button>View recipe →</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <a href="ChickenTin.html"><img src="Images/Tinola bg.jpg" alt="Dish Image"></a>
+        <div>
+          <a href="ChickenTin.html"><h4>Chicken Tinola</h4></a>
+          <a href="ChickenTin.html"><p><b>Chicken Tinola</b> is a classic Filipino comfort soup, perfect for a chilly day or when you're feeling...</p></a>
+          <a href="ChickenTin.html"><button>View recipe →</button></a>
+        </div>
+      </div>     
+      <div class="card">
+        <a href="Halaya.html"><img src="Images/Ube bg.jpg" alt="Dish Image"></a>
+        <div>
+          <a href="Halaya.html"><h4>Ube Halaya</h4></a>
+          <a href="Halaya.html"><p><b>Ube Halaya</b> is a sweet, creamy jam made from purple yam, milk, and sugar. It's a versatile dessert...</p></a>
+          <a href="Halaya.html"><button>View recipe →</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <a href="beefEmpa.html"><img src="Images/Beef bg.jpg" alt="Dish Image"></a>
+        <div>
+          <a href="beefEmpa.html"><h4>Beef Empanada</h4></a>
+          <a href="beefEmpa.html"><p><b>Beef Empanadas</b> are savory pastries filled with a flavorful mixture of ground beef,...</p></a>
+          <a href="beefEmpa.html"><button>View recipe →</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <a href="Pandan.html"><img src="Images/Pandan bg.jpg" alt="Dish Image"></a>
+        <div>
+          <a href="Pandan.html"><h4>Buko Pandan</h4></a>
+          <a href="Pandan.html"><p><b>Buko Pandan</b> is a beloved Filipino dessert, a delightful combination of creamy coconut milk...</p></a>
+          <a href="Pandan.html"><button>View recipe →</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Dish Delights</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer> 
+</body>
+</html>

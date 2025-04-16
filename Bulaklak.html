@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamite Lumpia</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;           
+            padding-top: 0px; 
+        }
+
+        .navbar {
+            position: fixed; 
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 50px;
+            padding-top: 50px;
+            padding-bottom: 0px;   
+            align-items: center;
+            font-weight: bold;
+            background: url(Images/Bggg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            backdrop-filter: blur(1px);
+
+        }
+
+        .navbar h1 {
+            color: white;
+            margin: 0;
+            font-size: 40px;
+        }
+
+        .navbar ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-right: 150px;
+            list-style: none;
+            gap: 40px;
+            text-transform: uppercase;
+            font-size: 20px;
+            
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            transition: color 0.3s;
+            cursor: pointer; 
+        }
+
+        .navbar li:hover {
+          background-color: #332f70;
+          padding: 1px ;
+          border-radius: 30px;
+        }
+            
+    button {
+        display: flex;
+        height: 3em;
+        width: 100px;
+        align-items: center;
+        justify-content: center;
+        background-color: #eeeeee4b;
+        border-radius: 3px;
+        letter-spacing: 1px;
+        transition: all 0.2s linear;
+        cursor: pointer;
+        border: none;
+        background: #fff;
+        font-size: 25px;
+        padding-top: 150px;
+        padding-bottom: 0;
+    }
+
+    button a{
+        font-size: 25px;
+         border: 2px solid; 
+         border-color: black; 
+         margin-left: 50px; 
+         margin-top: 10px; 
+         color: rgb(3, 3, 3); 
+         padding: 5px 20px 5px 20px; 
+         border-radius: 25px;
+         text-decoration: none;
+         transition: background-color 0.6s, color 0.6s;
+    }   
+
+    button a:hover {
+        background-color: #362F70;
+        color: white;
+    }
+        
+    .container {
+        display: flex;
+        gap: 15px;
+        background: rgb(199, 199, 201);
+        padding: 40px;
+        margin: 0 320px 0 320px;
+        border-radius: 25px;      
+        justify-content: center;   
+    }
+    h1{
+        margin-left: 200px;
+        margin-right: 200px;
+        font-size: 35px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    p {
+        margin-left: 200px;
+        margin-right: 200px;
+        margin-top: 0px;
+        font-size: 24px;
+        text-align: justify;
+        text-justify: inter-word;
+    }
+
+    .content{
+        padding-top: 60px;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    img {
+        width: 180px;
+        height: 270px;
+        object-fit: cover;    
+    }
+
+    .ing{
+        margin-top: 0;
+        margin-left: 200px;
+        font-size: 24px;
+        list-style: outside; 
+    }
+
+    .ing p {
+        margin-left: 5px;
+        font-size: 24px;
+    }
+
+    .instruction {
+        margin-left: 200px;
+        margin-right: 200px;
+        font-size: 24px;
+        padding-top: 0;
+        text-align: justify;
+        text-justify: inter-word;
+    }
+
+    .instruction p {
+        margin-left: 0px;
+        font-size: 24px;
+        list-style: bullet;
+        padding-left: 0;
+        text-align: justify;
+        text-justify: inter-word;
+    }
+
+    .toTop {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        padding-top: 0;
+       
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #333;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 14px;
+    
+    }
+
+    .toTop a{
+        font-size: 25px;
+         border: 2px solid; 
+         border-color: black; 
+         margin-left: 50px; 
+         margin-top: 10px; 
+         color: rgb(3, 3, 3); 
+         padding: 5px 20px 5px 20px; 
+         border-radius: 25px;
+         text-decoration: none;
+         transition: background-color 0.6s, color 0.6s;
+    }
+
+    .toTop a:hover {
+        background-color: #362F70;
+        color: white;
+    }
+
+    .back-to-top:hover {
+      background: #555;
+    }
+
+    .footer {
+        color: black;
+        background: #362F70;
+        text-align: center;
+        padding: 10px 0px;
+        position: relative;
+        top: 50px; 
+        bottom: 0px; 
+        width: 100%;
+    }
+</style>            
+</head>
+<body>
+    <div class="navbar">
+        <h1>Dish Delights</h1>
+        <ul>
+            <li>
+                <a href="Homepage.html#home">Home</a>
+            </li>
+            <li>
+                <a href="Recipes.html">Recipes</a>
+            </li>
+            <li>
+                <a href="Homepage.html#about">About Us</a>
+            </li>
+            <li>
+                <a href="Homepage.html#contactcont">Contact Us</a>
+            </li>
+            <li>
+                <a href="Homepage.html#support">Support Us</a>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <button>
+           <a href="Recipes.html#appetizer" id="top">Back</a>
+          </button>
+    </div>
+    <div class="content">
+        <div class="container">         
+            <img src="Images/ChichaBul  1.jpg">          
+            <img src="Images/ChichaBul  2.jpg">        
+            <img src="Images/ChichaBul  3.jpg">            
+    </div>
+
+    <div>
+            <h1><br>Chicharon Bulaklak</h1><br>
+        <p><b>Chicharon Bulaklak</b> meaning "flower chicharon,"is a popular Filipino appetizer known for its crispy texture and rich flavor.t's made from deep-fried pork mesentery, a tissue that connects the intestines to the abdominal wall, giving it a unique, flower-like appearance. This recipe provides detailed instructions and incorporates images to guide you through the process.
+        </p><br><br>
+        </div>
+    <div class="ing">
+        <h4>Ingredients:</h4>
+        <ul>
+            
+            <li>2 lbs. pork ruffle fat (cleaned)</li><br>
+            <li>1 tablespoon whole peppercorn</li><br>
+            <li>5 dried bay leaves</li><br>
+            <li>2 ½ tablespoons sea salt </li>
+            <li>4 cups canola oil</li><br>
+            <li>6 cups water</li><br>
+            
+            
+        </ul>
+    </div>
+    <div class="instruction">
+        <h4>Instructions:</h4>
+        <ol>
+            <li>
+              Cleaning and Preparation: Thoroughly clean the pork ruffle fat.Several online sources recommend rinsing it with vinegar and salt to remove impurities. <br>
+               This step is crucial for achieving a clean and delicious final product.  <br>
+               <br><br>
+            </li>
+            <li>
+               Boiling: In a large pot, combine the ruffle fat, peppercorns, 2 tablespoons of salt, and bay leaves. Add water, bring to a boil, then reduce heat and simmer for about 1 hour, or until tender. This process helps to render some of the fat and make the chicharon more crispy. <br>
+               <br><br>
+            </li>
+            <li>
+               Drying: Remove the boiled ruffle fat from the pot and let it drain completely.  Pat it dry with paper towels to remove excess moisture.  This step is essential for achieving maximum crispiness during frying.<br>
+                <br><br>
+            </li>   
+            <li> 
+               Salting: Rub the remaining ½ tablespoon of salt all over the ruffle fat.  This additional salting enhances the flavor and helps to further draw out moisture.<br>
+                <br><br>
+            </li> 
+            <li>
+                Deep Frying:Heat the canola oil in a deep fryer or large pot to 350°F (175°C).  Carefully add the ruffle fat in batches, ensuring not to overcrowd the pot. Deep fry over medium heat until golden brown and crispy (approximately 3-5 minutes per batch).  Be cautious of oil splattering.<br>
+                <br><br>
+           </li>
+            <li>
+               Draining: Remove the fried ruffle fat from the oil and place it on a plate lined with paper towels to absorb excess oil.<br>
+                <br><br>
+           </li>
+           <li>
+               Serving: Serve immediately while still warm and crispy. Chicharon Bulaklak is traditionally served with spiced vinegar.<br>
+                <br><br>
+           </li>
+        
+    </div>
+    <h3 class="toTop">
+        <a href="#top">Back  to the Top</a>
+    </h3>
+    <footer id="footer" class="footer">
+        <div class="container">
+          <div class="copyright">
+            &copy; Copyright <strong><span>Dish Delights</span></strong>. All Rights Reserved
+          </div>
+        </div>
+      </footer> 
+</body>
+</html>
